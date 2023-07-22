@@ -19,7 +19,7 @@ public class DeployAppApplication {
         SpringApplication.run(DeployAppApplication.class, args);
     }
 
-    @Profile({"dev", "prod"})
+    @Profile({"dev"})
     @Bean
     CommandLineRunner devServerStart(UserRepository userRepository, ProductRepository productRepository){
         return args -> {
@@ -35,7 +35,7 @@ public class DeployAppApplication {
     private User newUser(String username){
         return User.builder()
                 .email(username+"@nate.com")
-                .password("1234")
+                .password("meta1234!")
                 .username(username)
                 .build();
     }
