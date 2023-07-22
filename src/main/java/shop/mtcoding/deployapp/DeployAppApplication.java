@@ -19,7 +19,7 @@ public class DeployAppApplication {
         SpringApplication.run(DeployAppApplication.class, args);
     }
 
-    @Profile({"dev"})
+    @Profile({"dev", "prod"})
     @Bean
     CommandLineRunner devServerStart(UserRepository userRepository, ProductRepository productRepository){
         return args -> {
